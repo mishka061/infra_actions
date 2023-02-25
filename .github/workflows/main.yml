@@ -1,6 +1,8 @@
 name: Django-app workflow
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   tests:
@@ -49,7 +51,7 @@ jobs:
     needs: build_and_push_to_docker_hub
     steps:
       - name: executing remote ssh commands to deploy
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
