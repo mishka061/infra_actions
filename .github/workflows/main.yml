@@ -64,7 +64,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          # Выполняет pull образа DockerHub
+          # Выполняетpull образа DockerHub
           sudo docker pull mishka061/infra
 
           sudo docker stop $(sudo docker ps -a -q)
